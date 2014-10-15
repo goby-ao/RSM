@@ -1,5 +1,7 @@
 
 #基于 Akka 的远程服务管理模块
+**Keyworks**:  `Hadoop`,`akka`,`Spark`,`Java`
+
 基于大数据一体机（集成了 Hadoop，Hive，HBase 等大数据工具）的管理平台，整合和管理一体机的服务。
 提供如下功能：
 - Hadoop 的管理，包括 HDFS 文件系统，以及 Mapred 任务管理。

@@ -1,6 +1,6 @@
 
 #基于 Akka 的远程服务管理模块
-基于大数据一体机的管理平台（平台集成了 Hadoop，Hive，HBase 等大数据工具），管理平台可以实现对上述各种大数据工具的一个整合管理，例如: Hadoop HDFS 文件系统的可视化管理，MapReduce 任务的展示与管理， Hive 任务提交等；同时基于 Ganglia 和 Nagios 对云平台提供监控与告警功能等。其中有个核心模块即：远程服务管理模块，负责一体机上的服务管理，基于分布式消息通信框架 Akka 开发一个远程服务管理系统。
+基于大数据一体机的管理平台（平台集成了 Hadoop，Hive，HBase 等大数据工具），管理平台可以实现对上述各种大数据工具的一个整合管理，例如: Hadoop HDFS 文件系统的可视化管理，MapReduce 任务的展示与管理， Hive 任务提交等；同时基于 Ganglia 和 Nagios 对云平台提供监控与告警功能等。其中有个核心模块即：远程服务管理模块，负责一体机上的服务管理，基于分布式消息通信框架 Akka 开发一个远程服务管理系统。关于 akka 的介绍可以看我的这篇文章 [akka introduce](https://github.com/flyaos/Notebook/blob/master/Notes/Akka/akka_introduce.md)。
 
 ## 0.架构
 

@@ -1,6 +1,6 @@
 
 #基于 Akka 的远程服务管理模块
-**Keyworks**:  `Hadoop`,`akka`,`Spark`,`Java`
+**Keywords**:  `Hadoop`,`akka`,`Spark`,`Java`
 
 基于大数据一体机（集成了 Hadoop，Hive，HBase 等大数据工具）的管理平台，整合和管理一体机的服务。
 提供如下功能：
@@ -9,6 +9,7 @@
 - 云平台提供监控与告警功能 (基于 Ganglia 和 Nagios )
 - 用户权限、控制面板
 - 服务管理
+
 核心模块即：服务管理，基于分布式消息通信框架 Akka 开发一个远程服务管理系统。关于 akka 的介绍可以看我的这篇文章 [akka introduce](https://github.com/flyaos/Notebook/blob/master/Notes/Akka/akka_introduce.md)。
 
 ## 0.架构

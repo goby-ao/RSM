@@ -19,7 +19,7 @@
  ![架构图](http://ww4.sinaimg.cn/large/7377e81bjw1elcd9hy8goj21kw0rngpu.jpg)
 
 ### 详细介绍
-主要分为两个模块 Server 端和 agent 端。简单介绍一下这两端所包含的包和类及其功能。
+主要分为两个模块 Server 端和 Agent 端。简单介绍一下这两端所包含的包和类及其功能。
 ####Server 端：
 - **TaskQueue**：将前台发过来的命令入队列。
 - **Application**：入口，初始化 Server
@@ -61,7 +61,7 @@
 使用说明：sh killProcess.sh [-p] [port] ,如果不指定端口号，默认 kill 掉绑定 2552 端口号的进程。2552 为 akka server 默认绑定的端口号。
 **注意**：每次启动Server时 先杀掉绑定2552端口号的进程，执行sh killProcess即可。
 
-### Agent端环境配置
+### Agent 端环境配置
 由于服务管理的默认用户为hadoop，先切换到hadoop用户,将以下文件上传到目录/home/hadoop/akka-service。如果没有该目录则新建一个。
 - 文件说明：
 > agent.jar------------------------- agent jar包 执行文件   

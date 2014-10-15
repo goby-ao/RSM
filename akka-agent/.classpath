@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="D:/Repositories/Maven/com/typesafe/akka/akka-actor_2.10/2.2.3/akka-actor_2.10-2.2.3.jar"/>
+	<classpathentry kind="lib" path="D:/Repositories/Maven/org/scala-lang/scala-library/2.10.2/scala-library-2.10.2.jar"/>
+	<classpathentry kind="lib" path="D:/Repositories/Maven/com/typesafe/config/1.0.2/config-1.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/akka-remote_2.10-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/netty-3.6.6.Final.jar"/>
+	<classpathentry kind="lib" path="lib/akka-cluster_2.10-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/akka-contrib_2.10-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/akka-kernel_2.10-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/protobuf-java-2.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/scalabuff-runtime_2.10-1.2.0.jar"/>
+	<classpathentry kind="lib" path="D:/Repositories/Maven/log4j/log4j/1.2.12/log4j-1.2.12.jar"/>
+	<classpathentry kind="lib" path="D:/Repositories/Maven/commons-logging/commons-logging/1.1/commons-logging-1.1.jar">
+		<attributes>
+			<attribute name="maven.groupId" value="commons-logging"/>
+			<attribute name="maven.artifactId" value="commons-logging"/>
+			<attribute name="maven.version" value="1.1"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

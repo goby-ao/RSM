@@ -13,14 +13,16 @@
 ####Server 端：
 - **TaskQueue**：将前台发过来的命令入队列。
 - **Application**：入口，初始化 Server
-> 1.读取配置文件创建 Syetem actor，  
-  2.创建 Supervisior actor。  
+>1.读取配置文件创建 Syetem actor   
+  2.创建 Supervisior actor。   
   3.创建检测两端是否连接的线程，实时更新 agent 所在主机的连接状态。  
+
 - **Supervisior**：接受 Agent 来的注册信息，创建对应的 Worker，同时监视 worker 的状态生命周期。
-- **Worker**：与 Agent 端通信:
-> 1.如果 Agent 空闲，则从命令队列取出一条命令并发送。  
-  2.接收远端的执行结果，根据结果状态来更新服务角色和服务的状态。  
-  3.根据心跳信息实时更新agent的连接状态。   
+- **Worker**：与 Agent 端通信：  
+>1.如果 Agent 空闲，则从命令队列取出一条命令并发送。  
+2.接收远端的执行结果，根据结果状态来更新服务角色和服务的状态。  
+3.根据心跳信息实时更新agent的连接状态。
+
 - **ServerAcotr**：旧版本 server，现已分离 supervisior 和 worker，容错性低，已废弃。  
 - **DBTool**: 更新数据库操作的工具类。（完成 Worker 的2、3）
 - **Message**：包含各种通信过程中用到的 Java Bean，需要序列化。

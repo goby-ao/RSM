@@ -1,28 +1,24 @@
 
 #基于 Akka 的远程服务管理模块
----------
->基于大数据一体机的管理平台（平台集成了 Hadoop，Hive，HBase 等大数据工具），管理平台可以实现对上述各种大数据工具的一个整合管理，例如: Hadoop HDFS 文件系统的可视化管理，MapReduce 任务的展示与管理， Hive 任务提交等；同时基于 Ganglia 和 Nagios 对云平台提供监控与告警功能等。其中有个核心模块即：远程服务管理模块，负责一体机上的服务管理，基于分布式消息通信框架 Akka 开发一个远程服务管理系统。
+基于大数据一体机的管理平台（平台集成了 Hadoop，Hive，HBase 等大数据工具），管理平台可以实现对上述各种大数据工具的一个整合管理，例如: Hadoop HDFS 文件系统的可视化管理，MapReduce 任务的展示与管理， Hive 任务提交等；同时基于 Ganglia 和 Nagios 对云平台提供监控与告警功能等。其中有个核心模块即：远程服务管理模块，负责一体机上的服务管理，基于分布式消息通信框架 Akka 开发一个远程服务管理系统。
 
 ## 0.架构
----------
 
 阅读了 Apache Spark 的 Standalone Deploy 模块的源码，并参考其架构。系统基于 Master-Agent 模式，通过 Master 对分布的 Agent 实现远程服务管理。参考了 Spark 源码里的 deploy 模块。
 ### 架构图
----
- ![Alt text](./基于akka的服务管理模块 v2.0.jpg)
+ ![架构图](http://ww4.sinaimg.cn/large/7377e81bjw1elcd9hy8goj21kw0rngpu.jpg)
 
 ### 详细介绍
-----
 主要分为两个模块 Server 端和 agent 端。简单介绍一下这两端所包含的包和类及其功能。
-> ####Server 端：
+####Server 端：
 - **TaskQueue**：将前台发过来的命令入队列。
 - **Application**：入口，初始化 Server
->> 1.读取配置文件创建 Syetem actor，
+> 1.读取配置文件创建 Syetem actor，
  2.创建 Supervisior actor。
  3.创建检测两端是否连接的线程，实时更新 agent 所在主机的连接状态。
 - **Supervisior**：接受 Agent 来的注册信息，创建对应的 Worker，同时监视 worker 的状态生命周期。
 - **Worker**：与 Agent 端通信：
->> 1.如果 Agent 空闲，则从命令队列取出一条命令并发送。
+> 1.如果 Agent 空闲，则从命令队列取出一条命令并发送。
   2.接收远端的执行结果，根据结果状态来更新服务角色和服务的状态。
   3.根据心跳信息实时更新agent的连接状态。
 - **ServerAcotr**：旧版本 server，现已分离 supervisior 和 worker，容错性低，已废弃。
@@ -37,7 +33,6 @@
 
 
 ## 1.环境配置
----
 ### Server 端环境配置：
 - Hosts 配置，将Hadoop 环境的Namenode和datanode主机的主机名和IP映射起来。
 例如测试的环境 hosts 172.16.9.1
